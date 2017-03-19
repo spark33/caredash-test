@@ -6,10 +6,10 @@ class Doctor::ReviewsController < ApplicationController
     render json: @doctor.reviews
   end
 
-  # GET /doctors/1
+  # GET /doctors/1/reviews/1
   def show
-    @doctor = Doctor.find(params[:id])
-    render json: @doctor
+    @doctor = Doctor.find(params[:doctor_id])
+    render json: @doctor.reviews.find(params[:id])
   end
 
 end
